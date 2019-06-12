@@ -21,7 +21,7 @@
     "app": "electron .",
     "zip": "rimraf app.zip && zip -r -X app.zip -8 public/ build/app-darwin-x64/ build/app-win32-ia32/",
     "packager": "rimraf build/ && electron-packager . --out=build --all --overwrite",
-    "serve": "http-server public/"
+    "serve": "http-server public/ -c-1"
   },
   "keywords": [],
   "repository": {
