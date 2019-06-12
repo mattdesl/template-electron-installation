@@ -4,7 +4,7 @@ module.exports = {
   useExternalDisplay: false,
 
   // Default background color before page loads
-  backgroundColor: 'black',
+  backgroundColor: 'tomato',
 
   // Enable / disable global shortuts for Electron app
   hotkeys: true
