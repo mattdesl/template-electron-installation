@@ -49,6 +49,8 @@ The Electron app runs in kiosk fullscreen mode and comes setup with the followin
 
 See [./src/config.js](./src/config.js) for a couple boot options.
 
+Note the background color should be set in three places for ideal results: the Electron app (before page loads), the HTML style (before JS loads), and the canvas context itself (after JS loads).
+
 ## Packaging Windows + Mac
 
 If you are in control of the installation you might rather just run it locally with `npm run app` — but an EXE/APP executable is handy if you are passing the installation off to a remote team. You can change the output name with `productName` in [./package.json](./package.json).
