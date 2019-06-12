@@ -10,7 +10,9 @@
     "email": "dave.des@gmail.com",
     "url": "https://github.com/mattdesl"
   },
-  "dependencies": {},
+  "dependencies": {
+    "canvas-sketch": "^0.3.1"
+  },
   "devDependencies": {
     "electron": "^5.0.3",
     "electron-packager": "^13.1.1",
@@ -18,10 +20,12 @@
     "rimraf": "^2.6.3"
   },
   "scripts": {
-    "app": "electron .",
+    "app": "npm run bundle && electron .",
     "zip": "rimraf app.zip && zip -r -X app.zip -8 public/ build/app-darwin-x64/ build/app-win32-ia32/",
-    "packager": "rimraf build/ && electron-packager . --out=build --all --overwrite",
-    "serve": "http-server public/ -c-1"
+    "packager": "npm run bundle && rimraf build/ && electron-packager . --out=build --all --overwrite",
+    "serve": "npm run bundle && http-server public/ -c-1 -p 9966",
+    "start": "canvas-sketch src/sketch.js --dir=public --html=src/index.html --open",
+    "bundle": "canvas-sketch src/sketch.js --dir=public --html=src/index.html --build --title=app --name=index"
   },
   "keywords": [],
   "repository": {

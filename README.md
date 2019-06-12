@@ -2,6 +2,8 @@
 
 A bare-bones Electron setup for web-based media art & installations.
 
+This is setup with [canvas-sketch](https://github.com/mattdesl/canvas-sketch) for iterative development and bundling to a static site. See the `master` branch for a vanilla JS/HTML version.
+
 Git clone this repo, then:
 
 ```sh
@@ -11,13 +13,20 @@ cd template-electron-installation
 npm install
 ```
 
-Now you can do the following:
+Now you can do the following. Dev servers are all on `localhost:9966`.
 
 ```sh
-# Test the app with a local server, i.e. pure browser
+# Develop iteratively with LiveReload + canvas-sketch
+npm run start
+
+# Bundle the canvas-sketch app into a static site
+npm run bundle
+
+# Bundle & test static site with a local server
+# i.e. pure browser
 npm run serve
 
-# Test the app with Electron locally
+# Bundle & test the app with Electron locally
 npm run app
 
 # Bundle the Electron app for 64-bit macOS + Windows
