@@ -1,0 +1,35 @@
+{
+  "name": "template-electron-installation",
+  "productName": "MyCoolApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.3",
+    "electron-packager": "^13.1.1",
+    "http-server": "^0.11.1",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "app": "electron .",
+    "zip": "rimraf app.zip && zip -r -X app.zip -8 public/ build/app-darwin-x64/ build/app-win32-ia32/",
+    "packager": "rimraf build/ && electron-packager . --out=build --all --overwrite",
+    "serve": "http-server public/"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/template-electron-installation.git"
+  },
+  "homepage": "https://github.com/mattdesl/template-electron-installation",
+  "bugs": {
+    "url": "https://github.com/mattdesl/template-electron-installation/issues"
+  }
+}
