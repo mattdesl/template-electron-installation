@@ -2,6 +2,8 @@
 
 A bare-bones Electron setup for web-based media art & installations.
 
+See the [canvas-sketch](https://github.com/mattdesl/template-electron-installation/tree/canvas-sketch) branch for a modified version of this repo that is a little more iterative (hot reloading and so on).
+
 Git clone this repo, then:
 
 ```sh
