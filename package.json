@@ -20,7 +20,8 @@
   "scripts": {
     "app": "electron .",
     "zip": "rimraf app.zip && zip -r -X app.zip -8 public/ build/app-darwin-x64/ build/app-win32-ia32/",
-    "packager": "rimraf build/ && electron-packager . --out=build --all --overwrite",
+    "packager": "npm run bundle && rimraf build/ && npm run packager:package",
+    "packager:package": "DEBUG=electron-packager electron-packager . --all --out=build --overwrite --ignore=build --ignore=app.zip",
     "serve": "http-server public/ -c-1"
   },
   "keywords": [],

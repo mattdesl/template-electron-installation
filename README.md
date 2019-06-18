@@ -48,6 +48,14 @@ If you are in control of the installation you might rather just run it locally w
 
 I run these commands from a macOS computer. You'll need `wine` installed via homebrew to generate Windows builds. Or, you can modify the package.json script to only generate a specific build target. See [electron-packager](https://github.com/electron-userland/electron-packager#building-windows-apps-from-non-windows-platforms) for details.
 
+#### Tips
+
+If you have files or folders in your project repo that you don't want copied over, make sure to `--ignore` those in the `electron-packager` script.
+
+You can also speed up build time by using `--platform=win32,darwin --arch=ia32,x64` instead of `--all`, if you only want to build for EXE/APP.
+
+Another thing is to move all of your client-side (HTML/JS) dependencies to `devDependencies` in package.json, and only include modules that you actually require in `src/app.js` (currently the template doesn't require any additional modules). This will lead to a smaller output size.
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/mattdesl/template-electron-installation/blob/master/LICENSE.md) for details.
