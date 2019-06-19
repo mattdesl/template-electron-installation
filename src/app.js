@@ -3,6 +3,7 @@ const path = require('path');
 const electron = require('electron');
 const config = require('./config.js');
 
+app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
 app.commandLine.appendSwitch('disable-http-cache');
 app.commandLine.appendSwitch('v', 0);
 app.commandLine.appendSwitch('vmodule', 'console=0');
